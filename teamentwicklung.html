@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teamentwicklung bei beo-dialog – Zusammenarbeit wirksam gestalten.">
+  <title>Teamentwicklung – beo-dialog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">beo<span class="logo-dot"></span>dialog</a>
+  <ul class="nav-links">
+    <li><a href="index.html#anliegen">Ihre Anliegen</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#formate">Unser Vorgehen</a>
+      <div class="dropdown-menu">
+        <a href="supervision.html">Supervision</a>
+        <a href="coaching.html">Coaching / Führung</a>
+        <a href="teamentwicklung.html">Teamentwicklung</a>
+        <a href="organisationsberatung.html">Organisationsberatung</a>
+        <a href="training.html">Training</a>
+      </div>
+    </li>
+    <li><a href="index.html#philosophie">Philosophie</a></li>
+    <li><a href="index.html#ueber-uns">Über uns</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="subpage-main">
+  <div class="subpage-header">
+    <a href="index.html" class="subpage-back">← Zurück</a>
+    <h1>Teamentwicklung</h1>
+    <p class="subtitle">Zusammenarbeit wirksam gestalten</p>
+  </div>
+  <div class="subpage-body">
+    <p>Teams sind mehr als die Summe ihrer Mitglieder. Wie gut ein Team funktioniert, hängt weniger von den einzelnen Personen ab als von den Beziehungen, Rollen und ungeschriebenen Regeln zwischen ihnen. Genau diese Dynamiken nehmen wir in den Blick.</p>
+    <p>Teamentwicklung bei beo-dialog setzt dort an, wo es im Alltag hakt: bei unklaren Zuständigkeiten, verdeckten Konflikten, fehlender Abstimmung oder dem Gefühl, dass trotz hohem Einsatz die Ergebnisse nicht stimmen. Wir arbeiten mit dem Team an seinen realen Herausforderungen – nicht mit Modellen von der Stange.</p>
+    <h2>Typische Anlässe</h2>
+    <ul class="anlaesse">
+      <li>Neuaufstellung eines Teams nach Umstrukturierung oder Personalwechsel</li>
+      <li>Klärung von Rollen, Zuständigkeiten und Entscheidungswegen</li>
+      <li>Konflikte, die das Arbeitsklima und die Ergebnisse belasten</li>
+      <li>Zusammenführung von Teams aus unterschiedlichen Bereichen oder Kulturen</li>
+      <li>Reflexions- und Konzeptionstage für etablierte Teams</li>
+    </ul>
+    <h2>Formate</h2>
+    <p>Von einzelnen Teamtagen bis zu längerfristigen Entwicklungsprozessen mit mehreren Bausteinen. Wir klären vorab mit Ihnen, was das Team braucht, und gestalten den Prozess entsprechend.</p>
+    <a class="subpage-cta" href="index.html#kontakt">Kontakt aufnehmen</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 beo-dialog GbR <a href="#">Impressum</a> <a href="#">Datenschutz</a></p>
+</footer>
+
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+document.querySelectorAll('.nav-dropdown > a').forEach(t => {
+  t.addEventListener('click', e => {
+    if (window.innerWidth <= 768) { e.preventDefault(); t.parentElement.classList.toggle('open'); }
+  });
+});
+</script>
+</body>
+</html>

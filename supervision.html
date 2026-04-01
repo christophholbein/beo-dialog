@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Supervision bei beo-dialog – professionelles Handeln reflektieren, Haltung entwickeln.">
+  <title>Supervision – beo-dialog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">beo<span class="logo-dot"></span>dialog</a>
+  <ul class="nav-links">
+    <li><a href="index.html#anliegen">Ihre Anliegen</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#formate">Unser Vorgehen</a>
+      <div class="dropdown-menu">
+        <a href="supervision.html">Supervision</a>
+        <a href="coaching.html">Coaching / Führung</a>
+        <a href="teamentwicklung.html">Teamentwicklung</a>
+        <a href="organisationsberatung.html">Organisationsberatung</a>
+        <a href="training.html">Training</a>
+      </div>
+    </li>
+    <li><a href="index.html#philosophie">Philosophie</a></li>
+    <li><a href="index.html#ueber-uns">Über uns</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="subpage-main">
+  <div class="subpage-header">
+    <a href="index.html" class="subpage-back">← Zurück</a>
+    <h1>Supervision</h1>
+    <p class="subtitle">Professionelles Handeln reflektieren – Haltung entwickeln</p>
+  </div>
+  <div class="subpage-body">
+    <p>Wer professionell mit Menschen arbeitet, bewegt sich in einem Spannungsfeld aus fachlichen Anforderungen, institutionellen Rahmenbedingungen und persönlichen Haltungen. Supervision schafft den Raum, dieses Zusammenspiel zu reflektieren – nicht um fertige Antworten zu liefern, sondern um Handlungsfähigkeit und Klarheit zu gewinnen.</p>
+    <p>beo-dialog versteht Supervision als dialogischen Prozess: Wir nehmen nicht nur die einzelne Person in den Blick, sondern immer auch die Dynamiken im Team, in der Organisation und in den Beziehungen zu Klient:innen und Auftraggeber:innen.</p>
+    <h2>Typische Anlässe</h2>
+    <ul class="anlaesse">
+      <li>Reflexion komplexer Fallsituationen und professioneller Beziehungen</li>
+      <li>Klärung von Rollen und Aufträgen in vielschichtigen Kontexten</li>
+      <li>Umgang mit Belastung, Nähe und Distanz in der Arbeit mit Menschen</li>
+      <li>Begleitung von Berufseinsteiger:innen und neuen Fachkräften</li>
+      <li>Qualitätssicherung und Weiterentwicklung professioneller Standards</li>
+    </ul>
+    <h2>Formate</h2>
+    <p>Wir bieten Einzelsupervision, Teamsupervision und Gruppensupervision an – in Präsenz und online. Umfang und Rhythmus stimmen wir auf Ihre Situation ab, in der Regel in fortlaufenden Prozessen mit regelmäßigen Sitzungen.</p>
+    <a class="subpage-cta" href="index.html#kontakt">Kontakt aufnehmen</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 beo-dialog GbR <a href="#">Impressum</a> <a href="#">Datenschutz</a></p>
+</footer>
+
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+document.querySelectorAll('.nav-dropdown > a').forEach(t => {
+  t.addEventListener('click', e => {
+    if (window.innerWidth <= 768) { e.preventDefault(); t.parentElement.classList.toggle('open'); }
+  });
+});
+</script>
+</body>
+</html>

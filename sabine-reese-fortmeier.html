@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sabine Reese-Fortmeier – Coach, Supervisorin und Trainerin bei beo-dialog.">
+  <title>Sabine Reese-Fortmeier – beo-dialog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">beo<span class="logo-dot"></span>dialog</a>
+  <ul class="nav-links">
+    <li><a href="index.html#anliegen">Ihre Anliegen</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#formate">Unser Vorgehen</a>
+      <div class="dropdown-menu">
+        <a href="supervision.html">Supervision</a>
+        <a href="coaching.html">Coaching / Führung</a>
+        <a href="teamentwicklung.html">Teamentwicklung</a>
+        <a href="organisationsberatung.html">Organisationsberatung</a>
+        <a href="training.html">Training</a>
+      </div>
+    </li>
+    <li><a href="index.html#philosophie">Philosophie</a></li>
+    <li><a href="index.html#ueber-uns">Über uns</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="subpage-main">
+  <div class="subpage-header">
+    <a href="index.html" class="subpage-back">← Zurück</a>
+  </div>
+  <div class="subpage-body">
+    <div class="profile-hero">
+      <div class="profile-photo">
+        <img src="bilder/reese-fortmeier.jpg" alt="Sabine Reese-Fortmeier">
+      </div>
+      <div class="profile-intro">
+        <div class="profile-name">Sabine Reese-Fortmeier</div>
+        <div class="profile-claim">„Everything you can imagine is real, sagt Picasso. Ich arbeite mit Ihnen daran, was machbar ist, in die Realität umzusetzen."</div>
+        <div class="profile-contact-line">
+          <a href="mailto:srf@beo-dialog.de">srf@beo-dialog.de</a> · 0173 28 11 980
+        </div>
+      </div>
+    </div>
+
+    <p>Bereits zu Beginn meines Berufslebens übernahm ich Führungsverantwortung: Ich leitete als junge Diplom-Pädagogin eine Bildungsstätte. Da mir Bewegung Freude macht und Stillstand mir ein Graus ist, suchte ich mir ab Ende der 1980er Jahre neue Herausforderungen. Heute bin ich als Coach, Supervisorin (DGSv), Lehrsupervisorin, Trainerin und Ausbilderin für Gruppendynamik (DGGO) und Organisationsberaterin unterwegs.</p>
+    <p>Bald merkte ich, dass ich meine Kompetenzen als Beraterin am besten unabhängig und von außen einsetzen kann. Konsequenter Weise folgte 1993 der Schritt in die Selbstständigkeit. Ich berate Führungskräfte in Wirtschaftsunternehmen, Verbänden und Organisationen. Ob Einzelpersonen, Gruppen, Teams oder Organisationseinheiten im Beratungs-, Coaching- oder Trainigsprozess können Sie als Kunde einerseits auf meine Beziehungsstärke bauen und andererseits auf meine Fähigkeit, Distanz zu wahren.</p>
+    <p>Wenn nötig und gewünscht, verbinde ich Coaching auch ganz aktiv mit Bewegung. Beim Wandern lassen sich zum Beispiel wunderbar Arbeitszusammenhänge reflektieren. Probieren Sie es aus.</p>
+
+    <h2>Kundenkreis</h2>
+    <div class="branchen">
+      <span class="branche-tag">Energiewirtschaft</span>
+      <span class="branche-tag">Automobil</span>
+      <span class="branche-tag">Chemie</span>
+      <span class="branche-tag">Telekommunikation</span>
+      <span class="branche-tag">Ministerien</span>
+      <span class="branche-tag">Non-Profit-Organisationen</span>
+      <span class="branche-tag">Sparkassen</span>
+      <span class="branche-tag">Wohlfahrtsverbände</span>
+    </div>
+    <a class="subpage-cta" href="mailto:srf@beo-dialog.de">Kontakt aufnehmen</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 beo-dialog GbR <a href="#">Impressum</a> <a href="#">Datenschutz</a></p>
+</footer>
+
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+document.querySelectorAll('.nav-dropdown > a').forEach(t => {
+  t.addEventListener('click', e => {
+    if (window.innerWidth <= 768) { e.preventDefault(); t.parentElement.classList.toggle('open'); }
+  });
+});
+</script>
+</body>
+</html>

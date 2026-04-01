@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coaching und Führung bei beo-dialog – Führungsrolle klären und wirksam handeln.">
+  <title>Coaching / Führung – beo-dialog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">beo<span class="logo-dot"></span>dialog</a>
+  <ul class="nav-links">
+    <li><a href="index.html#anliegen">Ihre Anliegen</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#formate">Unser Vorgehen</a>
+      <div class="dropdown-menu">
+        <a href="supervision.html">Supervision</a>
+        <a href="coaching.html">Coaching / Führung</a>
+        <a href="teamentwicklung.html">Teamentwicklung</a>
+        <a href="organisationsberatung.html">Organisationsberatung</a>
+        <a href="training.html">Training</a>
+      </div>
+    </li>
+    <li><a href="index.html#philosophie">Philosophie</a></li>
+    <li><a href="index.html#ueber-uns">Über uns</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="subpage-main">
+  <div class="subpage-header">
+    <a href="index.html" class="subpage-back">← Zurück</a>
+    <h1>Coaching / Führung</h1>
+    <p class="subtitle">Führungsrolle klären – wirksam handeln</p>
+  </div>
+  <div class="subpage-body">
+    <p>Führung bedeutet, ständig zwischen widersprüchlichen Anforderungen zu navigieren: Nähe und Distanz, Durchsetzung und Beteiligung, eigene Überzeugung und Erwartungen der Organisation. Coaching bietet Führungskräften einen geschützten Reflexionsraum, in dem diese Spannungen produktiv bearbeitet werden können.</p>
+    <p>Bei beo-dialog verstehen wir Coaching nicht als Technik zur Selbstoptimierung, sondern als dialogische Begleitung: Wir arbeiten mit Ihnen an konkreten Situationen aus Ihrem Führungsalltag und entwickeln daraus Klarheit, Haltung und Handlungsoptionen.</p>
+    <h2>Typische Anlässe</h2>
+    <ul class="anlaesse">
+      <li>Übernahme einer neuen Führungsrolle oder Erweiterung des Verantwortungsbereichs</li>
+      <li>Umgang mit schwierigen Entscheidungen, Konflikten oder Widerständen</li>
+      <li>Entwicklung eines eigenen Führungsverständnisses</li>
+      <li>Balance zwischen operativer Einbindung und strategischer Verantwortung</li>
+      <li>Begleitung in Veränderungs- und Umstrukturierungsprozessen</li>
+      <li>Standortbestimmung und berufliche Neuorientierung</li>
+    </ul>
+    <h2>Formate</h2>
+    <p>Einzelcoaching in regelmäßigen Sitzungen oder als kompakter Prozess zu einem konkreten Anliegen. Auf Wunsch auch als Leitungscoaching für Führungsteams. In Präsenz oder online.</p>
+    <a class="subpage-cta" href="index.html#kontakt">Kontakt aufnehmen</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 beo-dialog GbR <a href="#">Impressum</a> <a href="#">Datenschutz</a></p>
+</footer>
+
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+document.querySelectorAll('.nav-dropdown > a').forEach(t => {
+  t.addEventListener('click', e => {
+    if (window.innerWidth <= 768) { e.preventDefault(); t.parentElement.classList.toggle('open'); }
+  });
+});
+</script>
+</body>
+</html>

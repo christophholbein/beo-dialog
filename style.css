@@ -336,13 +336,20 @@ section p { margin-bottom: var(--space-sm); color: var(--text-medium); }
 .step p { font-size: .9rem; }
 
 .formate { background: #fff; }
-.formate-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-sm);
+.formate-carousel {
+  position: relative;
   margin-top: var(--space-lg);
+  padding: 0 3rem;
+  overflow: hidden;
+}
+.formate-track {
+  display: flex;
+  gap: var(--space-sm);
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
 }
 .format-card {
+  flex: 0 0 auto;
+  width: 185px;
   padding: var(--space-md) var(--space-sm);
   background: var(--warm-white);
   border-radius: 8px;
@@ -563,6 +570,7 @@ footer a:hover { color: #fff; }
   .carousel-nav { display: none; }
 
   section { padding: var(--space-lg) var(--space-sm); }
+  .formate-carousel { padding: 0 var(--space-sm); }
 
   .profile-hero { flex-direction: column; align-items: center; text-align: center; }
   .profile-photo { width: 150px; height: 150px; }

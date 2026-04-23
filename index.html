@@ -91,12 +91,17 @@
   <div class="section-inner">
     <h2>Unsere Formate</h2>
     <p>Wir bieten Ihnen verschiedene Beratungsformate – zugeschnitten auf Ihre spezifischen Herausforderungen und Entwicklungsziele.</p>
-    <div class="formate-grid">
-      <a class="format-card" href="supervision.html"><div class="format-icon">◉</div><h3>Supervision</h3><p>Professionelles Handeln reflektieren</p></a>
-      <a class="format-card" href="coaching.html"><div class="format-icon">◎</div><h3>Coaching / Führung</h3><p>Führungsrolle klären und stärken</p></a>
-      <a class="format-card" href="teamentwicklung.html"><div class="format-icon">⬡</div><h3>Teamentwicklung</h3><p>Zusammenarbeit wirksam gestalten</p></a>
-      <a class="format-card" href="organisationsberatung.html"><div class="format-icon">◈</div><h3>Organisationsberatung</h3><p>Strukturen und Prozesse entwickeln</p></a>
-      <a class="format-card" href="training.html"><div class="format-icon">△</div><h3>Training</h3><p>Kompetenzen erfahrungsbasiert erweitern</p></a>
+    <div class="formate-carousel">
+      <button class="carousel-nav prev" id="formatePrev" aria-label="Vorherige">‹</button>
+      <div class="formate-track" id="formateTrack">
+        <a class="format-card" href="supervision.html"><div class="format-icon">◉</div><h3>Supervision</h3><p>Professionelles Handeln reflektieren</p></a>
+        <a class="format-card" href="coaching.html"><div class="format-icon">◎</div><h3>Coaching / Führung</h3><p>Führungsrolle klären und stärken</p></a>
+        <a class="format-card" href="teamentwicklung.html"><div class="format-icon">⬡</div><h3>Teamentwicklung</h3><p>Zusammenarbeit wirksam gestalten</p></a>
+        <a class="format-card" href="organisationsberatung.html"><div class="format-icon">◈</div><h3>Organisationsberatung</h3><p>Strukturen und Prozesse entwickeln</p></a>
+        <a class="format-card" href="training.html"><div class="format-icon">△</div><h3>Training</h3><p>Kompetenzen erfahrungsbasiert erweitern</p></a>
+      </div>
+      <button class="carousel-nav next" id="formateNext" aria-label="Nächste">›</button>
+      <div class="carousel-dots" id="formateDots"></div>
     </div>
   </div>
 </section>
@@ -212,6 +217,51 @@ nextBtn.addEventListener('click', () => {
 dots.forEach((dot, i) => dot.addEventListener('click', () => { currentPage = i; updateCarousel(); }));
 window.addEventListener('resize', () => { currentPage = 0; updateCarousel(); });
 updateCarousel();
+
+// Formate-Carousel
+const formateTrack = document.getElementById('formateTrack');
+const formateCards = formateTrack.querySelectorAll('.format-card');
+const formateDotsContainer = document.getElementById('formateDots');
+const formatePrev = document.getElementById('formatePrev');
+const formateNext = document.getElementById('formateNext');
+let formatePage = 0;
+
+function getFormatePerPage() {
+  return window.innerWidth <= 768 ? 1 : 3;
+}
+
+function buildFormateDots() {
+  const total = Math.ceil(formateCards.length / getFormatePerPage());
+  formateDotsContainer.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'carousel-dot' + (i === formatePage ? ' active' : '');
+    btn.addEventListener('click', () => { formatePage = i; updateFormateCarousel(); });
+    formateDotsContainer.appendChild(btn);
+  }
+}
+
+function updateFormateCarousel() {
+  const fpp = getFormatePerPage();
+  const totalPages = Math.ceil(formateCards.length / fpp);
+  formatePage = Math.min(formatePage, totalPages - 1);
+  const cardWidth = formateCards[0].offsetWidth;
+  const gap = parseInt(getComputedStyle(formateTrack).gap) || 16;
+  formateTrack.style.transform = `translateX(-${formatePage * fpp * (cardWidth + gap)}px)`;
+  formateDotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === formatePage));
+  formatePrev.style.visibility = formatePage === 0 ? 'hidden' : 'visible';
+  formateNext.style.visibility = formatePage >= totalPages - 1 ? 'hidden' : 'visible';
+}
+
+formatePrev.addEventListener('click', () => { formatePage = Math.max(0, formatePage - 1); updateFormateCarousel(); });
+formateNext.addEventListener('click', () => {
+  const total = Math.ceil(formateCards.length / getFormatePerPage());
+  formatePage = Math.min(total - 1, formatePage + 1);
+  updateFormateCarousel();
+});
+window.addEventListener('resize', () => { formatePage = 0; buildFormateDots(); updateFormateCarousel(); });
+buildFormateDots();
+updateFormateCarousel();
 </script>
 </body>
 </html>

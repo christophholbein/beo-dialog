@@ -339,7 +339,7 @@ section p { margin-bottom: var(--space-sm); color: var(--text-medium); }
 .formate-carousel {
   position: relative;
   margin-top: var(--space-lg);
-  padding: 0 var(--space-xl);
+  padding: 0 3rem;
   overflow: hidden;
 }
 .formate-track {
@@ -349,7 +349,7 @@ section p { margin-bottom: var(--space-sm); color: var(--text-medium); }
 }
 .format-card {
   flex: 0 0 auto;
-  width: 220px;
+  width: 185px;
   padding: var(--space-md) var(--space-sm);
   background: var(--warm-white);
   border-radius: 8px;

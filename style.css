@@ -161,6 +161,24 @@ nav {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* === HERO CTA === */
+.hero-cta {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: 0.9rem 2.2rem;
+  background: var(--beo-red);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background .2s, transform .2s;
+  opacity: 0;
+  animation: fadeUp .8s ease .4s forwards;
+}
+.hero-cta:hover { background: var(--beo-red-dark); transform: translateY(-2px); }
+
 /* === TEAM-CAROUSEL (nur index.html) === */
 .team-section {
   padding: var(--space-lg) 0;
@@ -535,6 +553,21 @@ footer a:hover { color: #fff; }
   padding: .25rem .7rem;
   border-radius: 20px;
   font-size: .8rem;
+}
+
+/* === FORMATE-GRID AUF DESKTOP === */
+@media (min-width: 769px) {
+  .formate .section-inner { max-width: 1060px; }
+  .formate-carousel { overflow: visible; padding: 0; }
+  .formate-carousel .carousel-nav,
+  #formateDots { display: none; }
+  .formate-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: none !important;
+    transition: none;
+  }
+  .format-card { width: 185px; }
 }
 
 /* === RESPONSIVE === */

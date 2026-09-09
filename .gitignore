@@ -1,0 +1,19 @@
+# Interne Arbeitsdateien – gehören nicht ins öffentliche Repo
+texte-entwurf.md
+texte-entwurf-kommentiert.md
+profilseiten-entwurf.md
+offene-fragen.md
+fotoshooting-shotliste.md
+pauls texte/
+Claude outputs/
+test mit video/
+weitere fotos/
+_vorschau/
+archiv/
+test.md
+
+# Werkzeuge und Systemdateien
+.claude/
+Thumbs.db
+desktop.ini
+.DS_Store

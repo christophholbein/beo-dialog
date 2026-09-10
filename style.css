@@ -357,27 +357,29 @@ section p { margin-bottom: var(--space-sm); color: var(--text-medium); }
 }
 .team-member {
   display: block;
-  text-align: center;
   text-decoration: none;
   color: inherit;
   transition: transform .3s;
 }
-.team-member:hover { transform: translateY(-5px); }
+.team-member:hover { transform: translateY(-4px); }
 .member-photo {
   display: block;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
+  width: 100%;
+  border-radius: 6px;
   overflow: hidden;
-  margin: 0 auto var(--space-xs);
-  border: 3px solid transparent;
-  transition: border-color .3s, box-shadow .3s;
+  margin: 0 0 .7rem;
   background: var(--warm-gray);
+  box-shadow: 0 2px 10px rgba(44,40,37,.08);
+  transition: box-shadow .3s;
 }
-.member-photo img { width: 100%; height: 100%; object-fit: cover; }
+.member-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
 .team-member:hover .member-photo {
-  border-color: var(--beo-red);
-  box-shadow: 0 8px 30px rgba(208,69,7,.18);
+  box-shadow: 0 10px 30px rgba(44,40,37,.20);
 }
 .member-name {
   display: block;
@@ -647,7 +649,6 @@ footer a:hover { color: #fff; }
   section { padding: var(--space-lg) var(--space-sm); }
   .saeulen-grid { grid-template-columns: 1fr; gap: var(--space-md); }
   .team-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md) var(--space-sm); margin-top: var(--space-lg); }
-  .member-photo { width: 110px; height: 110px; }
   .member-name { font-size: .95rem; }
   .spannungen-list { flex-direction: column; align-items: flex-start; text-align: left; }
   .spannungsband { text-align: left; }

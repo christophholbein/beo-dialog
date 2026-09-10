@@ -266,6 +266,39 @@ section p { margin-bottom: var(--space-sm); color: var(--text-medium); }
 }
 .angebot-hinweis a { color: var(--beo-red); text-decoration: none; border-bottom: 1px solid currentColor; }
 
+/* === CTA-BAND === */
+.cta-band {
+  background: #fff;
+  text-align: center;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-top: 1px solid var(--warm-gray);
+}
+.cta-frage {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.6rem;
+  background: var(--beo-red);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background .2s, transform .2s;
+}
+.cta-button:hover { background: var(--beo-red-dark); transform: translateY(-2px); }
+.cta-hinweis {
+  font-size: .9rem;
+  color: var(--text-light);
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
 /* === SPANNUNGSBAND === */
 .spannungsband {
   background: var(--text-dark);
@@ -403,7 +436,22 @@ section p { margin-bottom: var(--space-sm); color: var(--text-medium); }
 .kontakt { background: var(--beo-red); color: #fff; text-align: center; }
 .kontakt h2 { color: #fff; }
 .kontakt p { color: rgba(255,255,255,.9); }
-.kontakt-adresse { line-height: 1.6; }
+.kontakt-button {
+  display: inline-block;
+  margin: var(--space-sm) 0 var(--space-md);
+  padding: 1rem 2.6rem;
+  background: #fff;
+  color: var(--beo-red) !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none !important;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.12);
+  transition: transform .2s, box-shadow .2s;
+}
+.kontakt-button:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.18); }
+.kontakt-adresse { line-height: 1.7; font-size: .95rem; }
 .kontakt a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.5); transition: border-color .2s; }
 .kontakt a:hover { border-color: #fff; }
 
